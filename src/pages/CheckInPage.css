@@ -1,0 +1,115 @@
+.checkin-screen {
+  min-height: 100vh;
+  min-height: 100dvh;
+  background:
+    radial-gradient(circle at 20% 5%, rgba(59,167,227,0.12), transparent 40%),
+    radial-gradient(circle at 80% 95%, rgba(139,195,74,0.12), transparent 40%),
+    var(--bg);
+  display: flex;
+  flex-direction: column;
+  color-scheme: light;
+}
+
+/* Header */
+.ci-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 20px;
+  background: white;
+  border-bottom: 1px solid var(--border);
+  position: sticky; top: 0; z-index: 10;
+}
+.ci-logo { height: 28px; width: auto; }
+.ci-logout {
+  background: none; border: 1.5px solid var(--border);
+  border-radius: var(--r-full); padding: 6px 14px;
+  font-size: 13px; font-weight: 600; color: var(--text-2);
+  transition: all 0.2s;
+}
+.ci-logout:hover { border-color: var(--error); color: var(--error); background: var(--error-bg); }
+
+/* Main */
+.ci-main {
+  flex: 1; display: flex; flex-direction: column; align-items: center;
+  padding: 28px 20px 40px;
+  max-width: 440px; margin: 0 auto; width: 100%;
+  gap: 20px;
+}
+
+/* Greeting */
+.ci-greeting { text-align: center; width: 100%; }
+.ci-greeting-text { font-size: 18px; font-family: var(--font-display); font-weight: 700; color: var(--text); margin-bottom: 3px; }
+.ci-date { font-size: 13px; color: var(--text-2); }
+
+/* Clock */
+.ci-clock {
+  background: white; border: 1px solid var(--border); border-radius: var(--r-xl);
+  padding: 12px 28px; box-shadow: var(--sh-sm);
+}
+.ci-clock-time {
+  font-size: 22px; font-weight: 700; font-variant-numeric: tabular-nums;
+  letter-spacing: 0.05em;
+  background: var(--grad);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+}
+
+/* Punch button */
+.ci-punch-wrap { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+
+.ci-punch {
+  width: 200px; height: 200px; border-radius: 50%;
+  border: none; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 10px;
+  font-family: var(--font-display); font-size: 17px; font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.3s ease;
+  position: relative;
+}
+.ci-punch::after {
+  content: '';
+  position: absolute; inset: -10px; border-radius: 50%;
+  border: 2px solid currentColor; opacity: 0.12;
+}
+.ci-punch:active:not(:disabled) { transform: scale(0.95); }
+.ci-punch:disabled { cursor: not-allowed; opacity: 0.6; }
+
+.ci-punch-in {
+  background: var(--grad); color: white;
+  box-shadow: 0 0 0 12px rgba(59,167,227,0.1), var(--sh-blue);
+  animation: pulse-ring 2.5s ease-in-out infinite;
+}
+.ci-punch-out {
+  background: linear-gradient(135deg, #8BC34A, #6A9E35); color: white;
+  box-shadow: 0 0 0 12px rgba(139,195,74,0.1), 0 8px 28px rgba(139,195,74,0.35);
+}
+.ci-punch-done {
+  background: var(--bg); color: var(--text-3);
+  box-shadow: var(--sh-sm);
+  border: 2px solid var(--border);
+}
+.ci-punch-done::after { opacity: 0.05; }
+
+.ci-punch-hint {
+  display: flex; align-items: center; gap: 5px;
+  font-size: 12.5px; color: var(--text-3);
+  text-align: center;
+}
+
+/* Summary */
+.ci-summary { padding: 20px; width: 100%; }
+.ci-summary-title { font-weight: 700; font-size: 14px; margin-bottom: 14px; color: var(--text); }
+.ci-summary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.ci-summary-item { display: flex; flex-direction: column; gap: 4px; }
+.ci-summary-label { font-size: 12px; color: var(--text-3); font-weight: 500; text-transform: uppercase; letter-spacing: 0.04em; }
+.ci-summary-val { font-size: 16px; font-weight: 700; color: var(--text); font-variant-numeric: tabular-nums; }
+
+/* GPS note */
+.ci-gps-note {
+  display: flex; align-items: flex-start; gap: 7px;
+  background: var(--info-bg); border-radius: var(--r-md);
+  padding: 10px 14px; font-size: 12.5px; color: #1d4ed8;
+  width: 100%; line-height: 1.5;
+}
+
+@media (max-width: 380px) {
+  .ci-punch { width: 175px; height: 175px; font-size: 15px; }
+}

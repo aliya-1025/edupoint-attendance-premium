@@ -1,0 +1,96 @@
+.topbar {
+  height: var(--topbar-h);
+  background: white;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  gap: 16px;
+}
+
+.topbar-left { min-width: 0; }
+.topbar-title-wrap { overflow: hidden; }
+.topbar-title { font-size: 20px; font-family: var(--font-display); font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.topbar-subtitle { font-size: 13px; color: var(--text-2); margin-top: 1px; }
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.topbar-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.topbar-search-icon { position: absolute; left: 10px; color: var(--text-3); }
+.topbar-search-input {
+  padding: 7px 12px 7px 32px;
+  border-radius: var(--r-full);
+  border: 1.5px solid var(--border);
+  background: var(--bg);
+  font-size: 13.5px;
+  color: var(--text);
+  width: 180px;
+  transition: all 0.2s;
+}
+.topbar-search-input:focus {
+  outline: none;
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(59,167,227,0.12);
+  background: white;
+  width: 220px;
+}
+
+.topbar-clock {
+  display: flex;
+  align-items: center;
+  padding: 6px 12px;
+  background: var(--bg);
+  border-radius: var(--r-full);
+  border: 1px solid var(--border);
+}
+.topbar-clock-time {
+  font-size: 13px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+  letter-spacing: 0.03em;
+}
+
+.topbar-icon-btn {
+  width: 38px; height: 38px;
+  border-radius: var(--r-full);
+  border: 1.5px solid var(--border);
+  background: white;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--text-2);
+  transition: all 0.2s;
+  position: relative;
+}
+.topbar-icon-btn:hover { border-color: var(--blue); color: var(--blue); background: var(--blue-light); }
+
+.topbar-avatar {
+  width: 36px; height: 36px;
+  border-radius: var(--r-full);
+  background: var(--grad);
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--sh-blue);
+  flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+  .topbar { padding: 0 16px 0 56px; }
+  .topbar-search { display: none; }
+  .topbar-clock { display: none; }
+}

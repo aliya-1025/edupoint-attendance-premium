@@ -1,0 +1,56 @@
+.attendance-page { display: flex; flex-direction: column; gap: 16px; }
+
+.att-tabs {
+  display: flex; gap: 4px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--r-full);
+  padding: 4px;
+  width: fit-content;
+}
+.att-tab {
+  padding: 7px 18px; border-radius: var(--r-full); border: none;
+  background: transparent; color: var(--text-2);
+  font-size: 13.5px; font-weight: 500; font-family: var(--font-display);
+  transition: all 0.2s; cursor: pointer;
+}
+.att-tab-active { background: white; color: var(--blue-dark); font-weight: 600; box-shadow: var(--sh-sm); }
+
+.att-filters {
+  display: flex; align-items: flex-end; gap: 12px; flex-wrap: wrap;
+  padding: 16px 20px;
+}
+.att-filters .ep-field { min-width: 140px; }
+.att-search-wrap { position: relative; flex: 1; min-width: 240px; }
+.att-search-icon { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--text-3); }
+.att-search-input {
+  width: 100%; padding: 10px 14px 10px 36px;
+  border-radius: var(--r-full); border: 1.5px solid var(--border);
+  background: var(--bg); font-size: 14px; color: var(--text);
+  transition: all 0.2s;
+}
+.att-search-input:focus { outline: none; border-color: var(--blue); box-shadow: 0 0 0 3px rgba(59,167,227,0.12); background: white; }
+
+.att-table-header { padding: 14px 20px 10px; }
+.att-table-count { font-size: 13px; color: var(--text-3); }
+
+.sortable-th { cursor: pointer; user-select: none; }
+.sortable-th:hover { color: var(--blue); }
+
+.att-pagination {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 20px; border-top: 1px solid var(--border);
+  flex-wrap: wrap; gap: 12px;
+}
+.att-page-info { font-size: 13px; color: var(--text-3); }
+.att-page-btns { display: flex; gap: 4px; }
+.att-page-btn {
+  width: 32px; height: 32px; border-radius: var(--r-md);
+  border: 1.5px solid var(--border); background: white;
+  font-size: 13px; font-weight: 500; color: var(--text-2);
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.2s;
+}
+.att-page-btn:hover:not(:disabled) { border-color: var(--blue); color: var(--blue); background: var(--blue-light); }
+.att-page-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+.att-page-btn-active { background: var(--grad) !important; color: white !important; border-color: transparent !important; }
