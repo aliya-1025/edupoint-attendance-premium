@@ -50,6 +50,8 @@
 /* Logo */
 .login-logo-wrap {
   margin-bottom: 24px;
+  display: flex;
+  justify-content: center;
 }
 .login-logo {
   height: 56px;

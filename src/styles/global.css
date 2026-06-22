@@ -88,6 +88,12 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   color-scheme: light;
+  forced-color-adjust: none;
+}
+
+/* Force light mode everywhere — prevents Android Chrome auto-dark from inverting */
+* {
+  color-scheme: light;
 }
 #root { min-height: 100vh; }
 
